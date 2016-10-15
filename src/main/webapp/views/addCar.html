@@ -1,0 +1,50 @@
+
+        <div class="col-md-3" style="border: thin lightblue solid; border-radius: 5px;padding: 1em;">
+
+            <p> Add your Form here</p>
+
+            <form class="form-horizontal" novalidate>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="year">Year:</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" ng-model="year" id="year" placeholder="{{ctrl.placeholder.yearPH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="registered">Reg.:</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" ng-model="registered" id="registered" placeholder="{{ctrl.placeholder.registeredPH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="make">Make:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="make" id="make" placeholder="{{ctrl.placeholder.makePH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="model">Model:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="model" id="model" placeholder="{{ctrl.placeholder.modelPH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="description">Descr.:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="description" id="description" placeholder="{{ctrl.placeholder.descriptionPH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="price">Price:</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" ng-model="price" id="price" placeholder="{{ctrl.placeholder.pricePH}}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button ng-hide="ctrl.edit" ng-click="ctrl.addCar()" type="submit" class="btn btn-success">Add</button>
+                        <button ng-show="ctrl.edit" ng-click="ctrl.editCar()" type="submit" class="btn btn-success">Edit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
