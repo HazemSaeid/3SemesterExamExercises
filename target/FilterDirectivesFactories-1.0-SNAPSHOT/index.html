@@ -9,24 +9,7 @@
         <script src="app.js"></script>
         <title></title>
     </head>
-    <body ng-app="examApp" ng-controller="MyController as ctrl ">
-    <div class="container">
-            <h2>Grades & courses</h2>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Student</th>
-                        <th ng-repeat="course in studentsInfo.allCourses">{{course.courseName}}</th>
-                        <th>Average</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="student in studentsInfo.students | average">
-                        <td>{{student.name}}</td>
-                        <td ng-repeat="grade in student.grades">{{grade.grade}}</td>
-                        <td>{{student.average | currency:''}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>    </body>
+    <body ng-app="examApp">
+    <student-directive></student-directive>
+    </body>
 </html>

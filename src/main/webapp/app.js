@@ -1,5 +1,5 @@
 var app = angular.module('examApp', []);
-app.controller("MyController", ["$scope", "StudentFactory", "restFac", function ($scope, StudentFactory, restFac) {
+app.controller("MyController", ["$scope", "StudentFactory", function ($scope, StudentFactory) {
         $scope.studentsInfo = StudentFactory.student;
 //        console.log($scope.studentsInfo);
 //        console.log(StudentFactory.student);
