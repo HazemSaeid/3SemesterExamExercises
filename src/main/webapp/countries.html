@@ -1,0 +1,26 @@
+<div ng-controller="CountryController">
+    <table>
+        <thead> All Countries</thead>
+        <tr ng-repeat="country in countries">
+            <td>{{country.name}} </td>
+        </tr>
+    </table>
+   
+    <table>
+        <thead> African Countries</thead>
+        <tr ng-repeat="africa in african">
+            <td>{{africa.name}} </td>
+        </tr>
+    </table>
+    
+     <table>
+        <thead> Country codes</thead>
+        <tr ng-repeat="c in code">
+            <td>{{c.name}} </td>
+            <td>{{c.alpha2Code}}</td>
+        </tr>
+    </table>
+    
+    
+
+</div>        

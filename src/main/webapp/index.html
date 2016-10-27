@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="app.js" type="text/javascript"></script>   
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Exercises</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div  ng-controller="Controller">
+                        <p>{{randomNumber}}</p>
+                        <p>{{randomString}}</p>
+                    </div>
+                </div>
+                <div class="col-sm-3" ng-controller="MyController as ctrl">
+                     
+                        <p ng-repeat="person in ctrl.persons| myFilter">
+                            {{person.name}}
+                            {{person.age}}
+                        </p>
+                </div>
+                <div class="col-sm-3">
+                    <table ng-controller="ChessCtrl">
+                        <tr>
+                            <td ng-class="{'dark':$even}" ng-repeat="sq in board track by $index"><span ng-bind-html="sq | Chess"></span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-3">
+                    <div link-demo="download.jpg,promo_5.png">
+                        <div ng-repeat="img in images">
+                                <img src="pictures/{{img}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <format-company></format-company>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <country-directive>
+                    </country-directive>
+                        
+                </div>
+            </div>
+        
+        
+  
+    <style>
+        table {border-collapse: collapse; }
+        td { border: 1px solid black;height:30px;width: 30px;font-size: 28px;}
+        .dark{ background: lightgray;}
+
+    </style>
+</body>
+</html>
