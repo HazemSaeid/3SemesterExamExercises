@@ -1,0 +1,19 @@
+<div>
+    <div class="container">
+        <h2>All users</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in data">
+                    <td>{{user.name}}</td>
+                    <td>{{user.mail}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
