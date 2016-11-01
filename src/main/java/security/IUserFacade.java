@@ -21,4 +21,6 @@ public interface IUserFacade {
 
     Users getUserByUserId(String id);
     
+    void addNewUser(String username, String password);
+    
 }

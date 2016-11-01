@@ -24,7 +24,7 @@ public class UserFacade implements IUserFacade {
     public UserFacade() {
         addEntityManagerFactory(Persistence.createEntityManagerFactory("seed"));
         EntityManager em = emf.createEntityManager();
-
+        
         try {
             Users u1 = new Users();
             Users u = new Users();
@@ -54,7 +54,7 @@ public class UserFacade implements IUserFacade {
         Persistence.generateSchema("seed", null);
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("seed");
         EntityManager em = emf.createEntityManager();
-
+        
         try {
             Users u1 = new Users();
             Users u = new Users();
@@ -118,6 +118,28 @@ public class UserFacade implements IUserFacade {
             Logger.getLogger(UserFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
         return roles;
+    }
+
+    @Override
+    public void addNewUser(String username, String password) {
+        EntityManager em = emf.createEntityManager();
+        System.out.println("Adding new user");
+        try {
+            Users user = new Users();
+            user.setUserName(username);
+            String hashedPassword = PasswordStorage.createHash(password);
+
+            user.setPassword(hashedPassword);
+            user.setRoles("User");
+
+            em.getTransaction().begin();
+            em.persist(user);
+            em.getTransaction().commit();
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            em.close();
+        }
     }
 
 }

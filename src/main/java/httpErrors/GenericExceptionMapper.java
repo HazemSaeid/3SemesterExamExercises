@@ -21,6 +21,8 @@ public class GenericExceptionMapper implements ExceptionMapper<Exception> {
 
   @Override
   public Response toResponse(Exception ex) {
+    ex.printStackTrace();
+      System.out.println(ex.getMessage());
     JsonObject error = new JsonObject();
     JsonObject errorDetail = new JsonObject();
     int statusCode = 500;
