@@ -131,8 +131,8 @@ public class RandomUserForm extends javax.swing.JFrame implements Observer {
 
 
   private void btn1Clicked(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1Clicked
-      randomUserControl.fetchRandomUser();
-
+      randomUserControl.fetchRandomUser(this);
+      System.out.println("in Gui");
   }//GEN-LAST:event_btn1Clicked
 
   private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -174,7 +174,8 @@ public class RandomUserForm extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update(Observable o, Object o1) {
-        RandomUser random = new RandomUser();
+        RandomUser random = (RandomUser) o1;
+        System.out.println(o1);
         textFirstName.setText(random.getFirstName());
         textLastName.setText(random.getLastName());
         textStreet.setText(random.getStreet());
