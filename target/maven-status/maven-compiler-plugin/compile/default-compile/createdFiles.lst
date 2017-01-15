@@ -1,0 +1,12 @@
+Entity\Country.class
+Entity\City.class
+Entity\CountrylanguagePK.class
+Entity\Country_.class
+REST\CountryResource.class
+Entity\City_.class
+Entity\Countrylanguage.class
+Entity\CountrylanguagePK_.class
+Facade\Facade.class
+REST\ApplicationConfig.class
+Entity\Countrylanguage_.class
+Facade\iFacade.class
